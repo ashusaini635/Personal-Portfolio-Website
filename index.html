@@ -3,138 +3,1439 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashu - Portfolio</title>
-    <link rel="stylesheet" href="./src/output.css" />
+    <title>Ashu Saini - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .skill-bar {
+        position: relative;
+        height: 6px;
+        border-radius: 3px;
+        background: #e5e7eb;
+        overflow: hidden;
+      }
+      .skill-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 3px;
+        transition: width 1s ease-in-out;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .timeline-item:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 0.75rem;
+        top: 1.5rem;
+        bottom: -1.5rem;
+        width: 1px;
+        background-color: #e5e7eb;
+      }
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #d1d5db;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+      }
+      .custom-checkbox.checked {
+        background-color: #3b82f6;
+        border-color: #3b82f6;
+      }
+      .custom-checkbox.checked::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .min-h-90 {
+        min-height: 70vh;
+      }
+    </style>
   </head>
-  <body class="bg-gray-200 text-gray-800">
-    <header class="bg-gray-800 shadow">
-      <div class="lg:flex justify-between p-4">
-        <div>
-          <h1 class="font-bold text-3xl text-white font-sans text-center">
-            Ashu
-          </h1>
+  <body class="bg-white text-gray-800">
+    <!-- Header Section -->
+    <header
+      id="home"
+      class="relative min-h-90 flex items-center justify-center bg-gradient-to-r from-blue-50 to-blue-100"
+    >
+      <div class="absolute inset-0 z-0 opacity-10">
+        <div
+          class="h-full w-full"
+          style="
+            background-image: url('https://readdy.ai/api/search-image?query=abstract%20minimalist%20geometric%20pattern%20with%20subtle%20blue%20and%20gray%20shapes%2C%20professional%20modern%20design%20background%2C%20high%20quality%2C%20clean%20lines%2C%20soft%20shadows&width=1920&height=1080&seq=header-bg&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+      </div>
+      <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90 shadow-sm backdrop-blur-sm"
+      >
+        <div
+          class="container mx-auto px-6 py-4 flex items-center justify-between"
+        >
+          <a href="#home" class="text-xl font-semibold text-primary"
+            >Ashu<span class="text-gray-800"> Saini</span></a
+          >
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#about"
+              data-readdy="true"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#skills"
+              data-readdy="true"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Skills</a
+            >
+            <!-- <a
+              href="#projects"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Projects</a
+            > -->
+            <a
+              href="#experience"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button
+            id="mobile-menu-button"
+            class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
         </div>
-        <div>
-          <div>
-            <ul
-              class="text-sky-50 flex items-center justify-between gap-[4vw] p-2">
-              <li>
-                <a href="#about" class="hover:underline">About</a>
-              </li>
-              <li>
-                <a href="#projects" class="hover:underline">Projects</a>
-              </li>
-              <li>
-                <a href="#contact" class="hover:underline">Contact</a>
-              </li>
-            </ul>
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden bg-white shadow-lg absolute w-full"
+        >
+          <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+      <div
+        class="container mx-auto px-6 z-10 flex flex-col md:flex-row items-center justify-between"
+      >
+        <!-- Text Section -->
+        <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pl-12">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+          >
+            <span class="block">Hi, I'm</span>
+            <span class="text-primary">Ashu Saini</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-600 mb-8">
+            Data Analyst & RCM expert
+          </p>
+          <div
+            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
+          >
+            <a
+              href="#experience"
+              class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 animate-bounce transition-colors whitespace-nowrap"
+              >View My Work</a
+            >
+            <a
+              href="#contact"
+              class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="md:w-3/12 flex justify-center md:justify-end pr-6">
+          <div
+            class="relative w-fit border-2 border-primary rounded-lg border-white shadow-xl"
+          >
+            <img
+              src="./Ashu.jpeg"
+              alt="Ashu Saini"
+              class="relative rounded-lg shadow-lg w-full"
+            />
           </div>
         </div>
       </div>
-    </header>
-    <!-- about -->
-    <section id="about" class="p-6 container mx-auto font-sans">
-      <h2 class="text-2xl font-bold text-center py-2 underline">About Me</h2>
-      <p class="py-2 text-center text-wrap">
-        I am an experienced and results-driven professional with a strong
-        background in data analytics, automation, and reporting. With expertise
-        in Excel, VBA, SQL, and UiPath, I specialize in streamlining operations,
-        automating workflows, and delivering actionable insights. My experience
-        includes working with various practice management systems like ECW,
-        Unity, Tebra, and AdvancedMD, helping businesses optimize their revenue
-        cycle management. I am passionate about using data-driven
-        decision-making to enhance efficiency and drive performance.
-      </p>
-      <h3 class="font-bold text-center text-2xl underline font-sans py-4">
-        Skills & Expertise:
-      </h3>
-      <ul class="py-2 text-center">
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Data Analytics & Reporting:</span>
-          Excel, VBA, SQL, Power BI, Power Query
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Automation & Scripting:</span>
-          UiPath, Python
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Database Management:</span>
-          PostgreSQL, MySQL
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Web Development:</span> HTML, CSS,
-          Responsive Web Design
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Project Management Systems:</span>
-          ECW, Unity, Tebra, AdvancedMD
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Medical Coding & Billing:</span>
-          ICD-10, CPT, HCPCS, Claims Processing
-        </li>
-        <li class="p-2">
-          <span class="font-bold text-left">✔ Soft Skills:</span> Critical
-          Thinking, Problem-Solving, Team Collaboration
-        </li>
-      </ul>
-    </section>
-    <!-- project -->
-    <section id="projects" class="p-6 container mx-auto font-sans">
-      <h2 class="text-2xl font-bold text-center py-2 underline">Projects</h2>
-      <div>
-        <h3 class="font-bold py-2 text-center">
-          Automated Reporting System (Excel VBA & UiPath)
-        </h3>
-        <p class="py-2 text-center text-wrap">
-          Developed macros to automate report generation, reducing manual effort
-          by 80%. Implemented UiPath bots to extract, process, and upload
-          reports seamlessly.
-        </p>
-      </div>
-      <div>
-        <h3 class="font-bold py-2 text-center">
-          Responsive Web Dashboard (HTML, CSS, SQL)
-        </h3>
-        <p class="py-2 text-center text-wrap">
-          Designed an interactive dashboard for tracking production metrics.
-          Integrated SQL queries for real-time data visualization.
-        </p>
-      </div>
-      <div>
-        <h3 class="font-bold py-2 text-center">
-          ETL Process for Healthcare RCM
-        </h3>
-        <p class="py-2 text-center text-wrap">
-          Pulled data from multiple PMS systems, transformed it, and uploaded it
-          to databases. Improved data accuracy and reduced processing time.
-        </p>
-      </div>
-      <div>
-        <h3 class="font-bold py-2 text-center">
-          Front-End Support for Production Tracker
-        </h3>
-        <p class="py-2 text-center text-wrap">
-          Assisted in designing UI with HTML & CSS to ensure a user-friendly
-          experience. Collaborated with developers to integrate back-end
-          functionality.
-        </p>
-      </div>
-    </section>
 
-    <footer id="contact" class="bg-gray-800 shadow text-white font-bold">
-      <h2 class="text-2xl text-center p-2">Contact</h2>
-      <div class="lg:flex justify-center gap-6">
-        <p class="p-2 text-center">
-          Email:
-          <a href="mailto:ashusaini635@gmail.com" class="hover:text-blue-500"
-            >ashusaini635@gmail.com</a
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-primary"
+        >
+          <i class="ri-arrow-down-line ri-lg"></i>
+        </a>
+      </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <a href="https://#about" data-readdy="true">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+          </a>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-2/5 mb-10 md:mb-0">
+            <div class="relative">
+              <div
+                class="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-lg"
+              ></div>
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20young%20male%20developer%20in%20casual%20business%20attire%20working%20on%20laptop%20in%20modern%20office%20environment%2C%20side%20view%2C%20focused%20expression%2C%20natural%20lighting%2C%20minimalist%20workspace%20with%20plants&width=600&height=800&seq=about-photo&orientation=portrait"
+                alt="John working"
+                class="relative z-10 rounded-lg shadow-lg w-full"
+              />
+            </div>
+          </div>
+          <div class="md:w-3/5 md:pl-16">
+            <h3 class="text-2xl font-bold mb-6">Who I Am</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              I'm a results-driven Reporting Analyst and Automation Specialist
+              with over 3 years of experience in the healthcare RCM domain. I
+              focus on optimizing reporting workflows and automating repetitive
+              tasks using tools like Excel, VBA, SQL, and Playwright. With
+              hands-on experience across various Practice Management Systems
+              such as Tebra and AdvancedMD, I efficiently manage ETL processes
+              and deliver accurate, real-time insights through Power BI
+              dashboards. My work empowers stakeholders to make faster,
+              data-informed decisions.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              My approach combines clean, maintainable code with user-centric
+              report design and scalable automation architecture. I'm deeply
+              committed to continuous learning and staying ahead in the
+              fast-evolving world of healthcare tech and data automation, always
+              aiming to deliver innovative, high-impact solutions.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div>
+                <h4 class="font-semibold mb-3 flex items-center">
+                  <span
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                  >
+                    <i class="ri-user-line text-primary"></i>
+                  </span>
+                  Personal Info
+                </h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li><span class="font-medium">Name:</span> Ashu Saini</li>
+                  <li><span class="font-medium">Age:</span> 26 Years</li>
+                  <li>
+                    <span class="font-medium">Location:</span> Mohali, India
+                  </li>
+                  <li>
+                    <span class="font-medium">Email:</span>
+                    ashusaini635@gmail.com
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 flex items-center">
+                  <span
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                  >
+                    <i class="ri-award-line text-primary"></i>
+                  </span>
+                  My Interests
+                </h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li>Web Development</li>
+                  <li>Data analytics</li>
+                  <li>Automation</li>
+                  <li>Excel</li>
+                  <li>VBA</li>
+                  <li>Dashboards</li>
+                  <li>Power BI</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1JtNSHjpnKuVuCsvbYsXVccLVlYvVlKba"
+                target="_blank"
+                rel="noopener"
+                class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap flex items-center"
+              >
+                <i class="ri-download-line mr-2"></i> Download CV
+              </a>
+              <a
+                href="#contact"
+                class="border-2 border-primary text-primary px-6 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                >Let's Talk</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Skills & Expertise
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+            I've spent years honing my skills across various technologies and
+            disciplines. Here's what I bring to the table.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
-        </p>
-        <p class="p-2 text-center">Phone no: <span>+91-98036-98470</span></p>
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-bubble-chart-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Data analytics</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-html5-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">HTML5 / CSS3</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-database-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">PostgreSQL</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-layout-masonry-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Responsive Design</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-team-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Team Leadership</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-git-branch-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Git / Version Control</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-file-excel-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Advance Excel</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-terminal-box-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">VBA</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-bug-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Python</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-robot-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Automation</h3>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-lightbulb-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-center font-semibold">Problem Solving</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <!-- <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+            Here are some of my recent projects. Each one presented unique
+            challenges and opportunities for growth.
+          </p>
+        </div>
+        <div class="mb-10 flex flex-wrap justify-center gap-4">
+          <button
+            class="project-filter-btn active bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+            data-filter="all"
+          >
+            All Projects
+          </button>
+          <button
+            class="project-filter-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+            data-filter="web"
+          >
+            Web Development
+          </button>
+          <button
+            class="project-filter-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+            data-filter="mobile"
+          >
+            Mobile Apps
+          </button>
+          <button
+            class="project-filter-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+            data-filter="ui"
+          >
+            UI/UX Design
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="web ui"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20dashboard%20interface%20with%20analytics%20charts%20and%20product%20management%2C%20clean%20design%2C%20blue%20color%20scheme%2C%20professional%20UI%20design&width=600&height=400&seq=project1&orientation=landscape"
+                alt="E-commerce Dashboard"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-commerce Dashboard</h3>
+              <p class="text-gray-600 mb-4">
+                A comprehensive admin dashboard for online stores with
+                analytics, inventory management, and order processing.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >MongoDB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="mobile ui"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fitness%20mobile%20app%20interface%20on%20smartphone%2C%20workout%20tracking%20screens%2C%20clean%20modern%20UI%20with%20blue%20accent%20colors%2C%20activity%20charts&width=600&height=400&seq=project2&orientation=landscape"
+                alt="Fitness Tracker App"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Fitness Tracker App</h3>
+              <p class="text-gray-600 mb-4">
+                A mobile application for tracking workouts, nutrition, and
+                health metrics with personalized recommendations.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >React Native</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Firebase</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >UI/UX</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="web"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=real%20estate%20property%20listing%20website%20interface%2C%20clean%20modern%20design%20with%20property%20cards%20and%20search%20filters%2C%20professional%20web%20design&width=600&height=400&seq=project3&orientation=landscape"
+                alt="Real Estate Platform"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Real Estate Platform</h3>
+              <p class="text-gray-600 mb-4">
+                A web platform for property listings with advanced search,
+                virtual tours, and agent communication tools.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Vue.js</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Django</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >PostgreSQL</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="ui"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=banking%20app%20UI%20design%2C%20financial%20dashboard%20with%20transaction%20history%20and%20budget%20tracking%2C%20clean%20minimal%20interface%20with%20blue%20color%20scheme&width=600&height=400&seq=project4&orientation=landscape"
+                alt="Banking App UI Redesign"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Banking App UI Redesign</h3>
+              <p class="text-gray-600 mb-4">
+                A complete UI/UX overhaul for a banking application focusing on
+                simplicity, accessibility, and security.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Figma</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >UI/UX</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Prototyping</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="mobile web"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=food%20delivery%20app%20interface%20on%20smartphone%20and%20web%20browser%2C%20restaurant%20listings%20and%20order%20tracking%2C%20modern%20UI%20design%20with%20food%20photography&width=600&height=400&seq=project5&orientation=landscape"
+                alt="Food Delivery Service"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Food Delivery Service</h3>
+              <p class="text-gray-600 mb-4">
+                A cross-platform solution for food ordering and delivery with
+                real-time tracking and payment processing.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >React Native</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Express</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            data-category="web ui"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=learning%20management%20system%20interface%20with%20course%20listings%20and%20student%20dashboard%2C%20educational%20platform%20UI%20design%2C%20clean%20modern%20interface&width=600&height=400&seq=project6&orientation=landscape"
+                alt="Learning Management System"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Learning Management System</h3>
+              <p class="text-gray-600 mb-4">
+                An educational platform for course creation, student management,
+                and interactive learning experiences.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >TypeScript</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Next.js</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >GraphQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-flex items-center text-primary hover:text-blue-700 font-medium"
+          >
+            View All Projects <i class="ri-arrow-right-line ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section> -->
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+            My professional journey has allowed me to work with amazing teams
+            and on exciting projects.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="relative pl-10 space-y-12">
+            <div class="timeline-item relative">
+              <div
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+                >
+                  <h3 class="text-xl font-bold">Reporting Analyst</h3>
+                  <div class="flex items-center mt-2 md:mt-0">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >2024 - Present</span
+                    >
+                  </div>
+                </div>
+                <h4 class="text-primary font-medium mb-4">SGH Management</h4>
+                <!-- Automation of Manual Tasks -->
+                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                  Automation of Manual Tasks
+                </h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                  <li>
+                    Developed Excel macros and scripts to streamline repetitive
+                    tasks, significantly reducing processing time.
+                  </li>
+                  <li>
+                    Created dynamic dashboards with automatic updates,
+                    delivering real-time data insights.
+                  </li>
+                  <li>
+                    Utilized UI Path to automate data extraction and reporting,
+                    boosting efficiency and accuracy.
+                  </li>
+                  <li>
+                    Designed system-integrated workflows to reduce manual
+                    interventions in daily operations.
+                  </li>
+                  <li>
+                    Built Python scripts to automate routine file handling, data
+                    formatting, and report generation tasks.
+                  </li>
+                </ul>
+
+                <!-- Collaboration with Development Team -->
+                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                  Collaboration with Development Team
+                </h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                  <li>
+                    Worked alongside front-end developers to build and refine
+                    the production tracker interface.
+                  </li>
+                  <li>
+                    Contributed to user experience (UX) design, ensuring an
+                    intuitive and user-friendly interface.
+                  </li>
+                  <li>
+                    Supported HTML and CSS integration to create responsive and
+                    visually appealing UI components.
+                  </li>
+                  <li>
+                    Ensured smooth alignment between front-end components and
+                    backend data for seamless functionality.
+                  </li>
+                </ul>
+
+                <!-- Database Management -->
+                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                  Database Management
+                </h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                  <li>
+                    Handled PostgreSQL database tasks, including uploading and
+                    managing large datasets using Python.
+                  </li>
+                  <li>
+                    Ensured data integrity and optimized database performance
+                    for accurate reporting and analysis.
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >Node.js</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >AWS</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >GraphQL</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item relative">
+              <div
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+                >
+                  <h3 class="text-xl font-bold">Analyst</h3>
+                  <div class="flex items-center mt-2 md:mt-0">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >2022 - 2024</span
+                    >
+                  </div>
+                </div>
+                <h4 class="text-primary font-medium mb-4">Coronis Ajuba</h4>
+                <ul
+                  class="text-gray-700 list-disc pl-5 space-y-2 text-base leading-relaxed"
+                >
+                  <li>
+                    Managed a team of 20 users responsible for client support
+                    and resolving inquiries efficiently.
+                  </li>
+                  <li>
+                    Acted as the primary point of contact for client
+                    communications, ensuring concerns were addressed promptly
+                    and effectively.
+                  </li>
+                  <li>
+                    Optimized workflows and improved customer experience using
+                    tools like ECW, Unity, Tebra, and AdvancedMD.
+                  </li>
+                  <li>
+                    Participated in client meetings to gather requirements,
+                    troubleshoot issues, and deliver customized solutions.
+                  </li>
+                  <li>
+                    Developed and implemented Management Information Systems
+                    (MIS) to generate weekly production reports, monthly
+                    analytics, and ad-hoc reporting based on business needs.
+                  </li>
+                  <li>
+                    Improved data analytics proficiency through ongoing learning
+                    and practical implementation, with expertise in Excel, VBA,
+                    and SQL.
+                  </li>
+                  <li>
+                    Generated insightful reports using operational data to
+                    support strategic decision-making processes.
+                  </li>
+                  <li>
+                    Led the investigation and resolution of laboratory claim
+                    denials, reducing the rejection rate by 25% through thorough
+                    analysis and process improvements.
+                  </li>
+                  <li>
+                    Managed full billing cycles for HRSA projects, ensuring
+                    regulatory compliance and optimal fund utilization.
+                  </li>
+                  <li>
+                    Oversaw the paper claim process for diverse medical
+                    treatments, achieving 98% accuracy and a 20% reduction in
+                    turnaround time.
+                  </li>
+                  <li>
+                    Supervised billing for Monarch Diagnostics Inc.’s COVID-19
+                    panel (U0001–U0005) and Tox Billing (80307–G0480), ensuring
+                    precise and timely submissions.
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >Excel</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >VBA</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >SQL</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >Data Visualization</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item relative">
+              <div
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+              ></div>
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+                >
+                  <h3 class="text-xl font-bold">Junior Analyst</h3>
+                  <div class="flex items-center mt-2 md:mt-0">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >2021 - 2022</span
+                    >
+                  </div>
+                </div>
+                <h4 class="text-primary font-medium mb-4">Coronis Health</h4>
+                <ul class="text-gray-600 mb-4 list-disc pl-5">
+                  <li>
+                    Led the investigation and resolution of laboratory claim
+                    denials, lowering the rejection rate by 25% through thorough
+                    assessment and process optimization.
+                  </li>
+                  <li>
+                    Managed complete billing for HRSA projects, ensuring full
+                    compliance with federal rules and maximizing money
+                    utilization.
+                  </li>
+                  <li>
+                    Managed the entire paper claim process for a variety of
+                    medical treatments, maintaining a 98% accuracy rate while
+                    cutting turnaround time by 20%.
+                  </li>
+                  <li>
+                    Oversaw billing for Monarch Diagnostics Inc.'s coronavirus
+                    diagnostics panel U0001-U0005, as well as Tox Billing
+                    80307-G0480, to ensure accurate and timely billing methods.
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >RCM</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >US healthcare</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >Problem Solving</span
+                  >
+                  <span
+                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    >MS office</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-16">
+          <a
+            href="#"
+            class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap inline-flex items-center"
+          >
+            <i class="ri-download-line mr-2"></i> Download Full Resume
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+            Have a project in mind or want to discuss potential opportunities?
+            I'd love to hear from you!
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Project Inquiry"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Tell me about your project..."
+                ></textarea>
+              </div>
+              <div class="flex items-center">
+                <div
+                  id="agreement-checkbox"
+                  class="custom-checkbox mr-3 cursor-pointer"
+                ></div>
+                <label for="agreement" class="text-gray-600 cursor-pointer"
+                  >I agree to the privacy policy and terms of service</label
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-8 rounded-lg h-full">
+              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-map-pin-line text-primary ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">Location</h4>
+                    <p class="text-gray-600">Mohali, India</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-mail-line text-primary ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                    <a
+                      href="mailto:ashusaini635@gmail.com"
+                      class="text-primary hover:underline"
+                      >ashusaini635@gmail.com</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-phone-line text-primary ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+                    <a
+                      href="tel:+919803698470"
+                      class="text-primary hover:underline"
+                      >+91 98036-98470</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-global-line text-primary ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">Website</h4>
+                    <a
+                      href="https://johnanderson.dev"
+                      class="text-primary hover:underline"
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-github-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-twitter-fill"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="ri-dribbble-fill"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a href="#home" class="text-2xl font-bold"
+              >Ashu<span class="text-primary"> Saini</span></a
+            >
+            <p class="text-gray-400 mt-2">Data analyst</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+            <a
+              href="#about"
+              class="text-gray-400 hover:text-white transition-colors"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Contact</a
+            >
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-github-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+            >
+              <i class="ri-dribbble-fill"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm">
+            © 2025 Ashu saini. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a
+          href="#home"
+          class="inline-block w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+        >
+          <i class="ri-arrow-up-line"></i>
+        </a>
       </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script id="theme-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check system dark mode preference
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("dark");
+        }
+        // Listen for system theme changes
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", (e) => {
+            if (e.matches) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
+          });
+      });
+    </script>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+    <script id="project-filter-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".project-filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
+            // Update active button
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("bg-primary", "text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            });
+            this.classList.remove("bg-gray-100", "text-gray-700");
+            this.classList.add("bg-primary", "text-white");
+            // Filter projects
+            projectCards.forEach((card) => {
+              const categories = card.getAttribute("data-category").split(" ");
+              if (filter === "all" || categories.includes(filter)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
+    <script id="skill-animation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const skillBars = document.querySelectorAll(".skill-progress");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const width = entry.target.style.width;
+                entry.target.style.width = "0";
+                setTimeout(() => {
+                  entry.target.style.width = width;
+                }, 100);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        skillBars.forEach((bar) => {
+          observer.observe(bar);
+        });
+      });
+    </script>
+    <script id="custom-checkbox-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkbox = document.getElementById("agreement-checkbox");
+        checkbox.addEventListener("click", function () {
+          this.classList.toggle("checked");
+        });
+      });
+    </script>
   </body>
 </html>
