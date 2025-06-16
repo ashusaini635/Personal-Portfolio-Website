@@ -120,6 +120,21 @@
       .min-h-90 {
         min-height: 70vh;
       }
+
+      .error-message {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .success-message {
+        color: #008000;
+        font-size: 16px;
+        margin-top: 10px;
+        display: none;
+        text-align: center;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800">
@@ -220,7 +235,7 @@
         class="container mx-auto px-6 z-10 flex flex-col md:flex-row items-center justify-between"
       >
         <!-- Text Section -->
-        <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pl-12">
+        <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pl-12 mt-[70px]">
           <h1
             class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
           >
@@ -247,7 +262,7 @@
         </div>
 
         <!-- Image Section -->
-        <div class="md:w-3/12 flex justify-center md:justify-end pr-6">
+        <div class="md:w-3/12 flex justify-center w-1/2 md:justify-end">
           <div
             class="relative w-fit border-2 border-primary rounded-lg border-white shadow-xl"
           >
@@ -814,7 +829,7 @@
           </p>
         </div>
         <div class="max-w-3xl mx-auto">
-          <div class="relative pl-10 space-y-12">
+          <div class="relative space-y-12">
             <div class="timeline-item relative">
               <div
                 class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
@@ -1073,11 +1088,11 @@
         </div>
         <div class="text-center mt-16">
           <a
-                href="https://drive.google.com/uc?export=download&id=1JtNSHjpnKuVuCsvbYsXVccLVlYvVlKba"
-                target="_blank"
-                rel="noopener"
-                class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap inline-flex items-center"
-              >
+            href="https://drive.google.com/uc?export=download&id=1JtNSHjpnKuVuCsvbYsXVccLVlYvVlKba"
+            target="_blank"
+            rel="noopener"
+            class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap inline-flex items-center"
+          >
             <i class="ri-download-line mr-2"></i> Download Full Resume
           </a>
         </div>
@@ -1096,7 +1111,18 @@
         </div>
         <div class="flex flex-col lg:flex-row gap-12">
           <div class="lg:w-1/2">
-            <form class="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              netlify
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label
+                  >Don’t fill this out if you’re human: <input name="bot-field"
+                /></label>
+              </p>
               <div>
                 <label for="name" class="block text-gray-700 font-medium mb-2"
                   >Your Name</label
@@ -1104,10 +1130,17 @@
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="John Doe"
                 />
+                <span
+                  class="text-sm text-red-500 mt-1 block"
+                  id="nameError"
+                ></span>
               </div>
+
               <div>
                 <label for="email" class="block text-gray-700 font-medium mb-2"
                   >Email Address</label
@@ -1115,10 +1148,17 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  required
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="john@example.com"
                 />
+                <span
+                  class="text-sm text-red-500 mt-1 block"
+                  id="emailError"
+                ></span>
               </div>
+
               <div>
                 <label
                   for="subject"
@@ -1128,10 +1168,12 @@
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Project Inquiry"
                 />
               </div>
+
               <div>
                 <label
                   for="message"
@@ -1140,26 +1182,37 @@
                 >
                 <textarea
                   id="message"
+                  name="message"
                   rows="5"
+                  required
                   class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Tell me about your project..."
                 ></textarea>
+                <span
+                  class="text-sm text-red-500 mt-1 block"
+                  id="messageError"
+                ></span>
               </div>
-              <div class="flex items-center">
+
+              <div class="flex items-center mb-4">
                 <div
                   id="agreement-checkbox"
                   class="custom-checkbox mr-3 cursor-pointer"
                 ></div>
-                <label for="agreement" class="text-gray-600 cursor-pointer"
-                  >I agree to the privacy policy and terms of service</label
-                >
+                <label for="agreement" class="text-gray-600 cursor-pointer">
+                  I agree to the privacy policy and terms of service
+                </label>
               </div>
-              <button
-                type="submit"
-                class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
-              >
-                Send Message
-              </button>
+
+              <!-- Add spacing before the button -->
+              <div class="mt-6">
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
           <div class="lg:w-1/2">
@@ -1216,9 +1269,10 @@
                   <div>
                     <h4 class="font-medium text-gray-900 mb-1">Website</h4>
                     <a
-                      href="https://johnanderson.dev"
+                      href="https://ashusaini.netlify.app/"
                       class="text-primary hover:underline"
-                    ></a>
+                      >Ashusaini.app</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1226,18 +1280,18 @@
                 <h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
                 <div class="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/ashusaini635"
                     class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
                     <i class="ri-github-fill"></i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/sainiashu/"
                     class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
                     <i class="ri-linkedin-fill"></i>
                   </a>
-                  <a
+                  <!-- <a
                     href="#"
                     class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
@@ -1248,7 +1302,7 @@
                     class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
                     <i class="ri-dribbble-fill"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -1264,7 +1318,7 @@
             <a href="#home" class="text-2xl font-bold"
               >Ashu<span class="text-primary"> Saini</span></a
             >
-            <p class="text-gray-400 mt-2">Data analyst</p>
+            <p class="text-gray-400 mt-2 text-center md:text-left">Data analyst</p>
           </div>
           <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
             <a
@@ -1295,18 +1349,18 @@
           </div>
           <div class="flex space-x-4">
             <a
-              href="#"
+              href="https://github.com/ashusaini635"
               class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
             >
               <i class="ri-github-fill"></i>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sainiashu/"
               class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
             >
               <i class="ri-linkedin-fill"></i>
             </a>
-            <a
+            <!-- <a
               href="#"
               class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
             >
@@ -1317,7 +1371,7 @@
               class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
             >
               <i class="ri-dribbble-fill"></i>
-            </a>
+            </a> -->
           </div>
         </div>
         <div
@@ -1439,6 +1493,60 @@
           this.classList.toggle("checked");
         });
       });
+    </script>
+    <script>
+      function validateForm(event) {
+        event.preventDefault(); // Stop default form submission
+
+        // Validation logic
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        let isValid = true;
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("messageError").textContent = "";
+
+        if (!name) {
+          document.getElementById("nameError").textContent =
+            "Name is required.";
+          isValid = false;
+        }
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+          document.getElementById("emailError").textContent =
+            "Valid email is required.";
+          isValid = false;
+        }
+        if (!message) {
+          document.getElementById("messageError").textContent =
+            "Message is required.";
+          isValid = false;
+        }
+
+        const agreementChecked = document
+          .getElementById("agreement-checkbox")
+          .classList.contains("checked");
+        if (!agreementChecked) {
+          alert("You must agree to the terms.");
+          isValid = false;
+        }
+
+        // 🚀 Submit if valid
+        if (isValid) {
+          event.target.submit(); // 👈 this line is very important
+        }
+      }
+
+      // Checkbox toggle
+      document
+        .getElementById("agreement-checkbox")
+        .addEventListener("click", function () {
+          this.classList.toggle("checked");
+          this.style.background = this.classList.contains("checked")
+            ? "#3B82F6"
+            : "transparent";
+        });
     </script>
   </body>
 </html>
