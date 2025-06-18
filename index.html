@@ -183,10 +183,19 @@
       .scrolled .parallax-scroll {
         transform: translateY(-80px) rotateX(10deg) scale(0.98);
       }
+      /* Hide scrollbar for all browsers */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none; /* IE & Edge */
+        scrollbar-width: 0px; /* Firefox */
+      }
     </style>
   </head>
   <body
-    class="bg-white text-gray-800 snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth"
+    class="bg-white text-gray-800 h-screen no-scrollbar scroll-smooth snap-y snap-mandatory"
   >
     <!-- Header Section -->
     <header
@@ -282,7 +291,7 @@
         </div>
       </nav>
       <div
-        class="container mx-auto px-6 z-10 flex flex-col md:flex-row items-center justify-between parallax-scroll"
+        class="container mx-auto px-6 z-10 flex flex-col md:flex-row items-center justify-between parallax-scroll overflow-y-scroll no-scrollbar"
       >
         <!-- Text Section -->
         <div
