@@ -84,10 +84,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body
-    class="bg-white text-gray-800 h-screen no-scrollbar scroll-smooth snap-y snap-mandatory"
+    class="bg-white text-gray-800 h-screen no-scrollbar dark:bg-gray-900 scroll-smooth snap-y snap-mandatory"
   >
     <!-- Header Section -->
     <header
@@ -105,25 +105,31 @@
         ></div>
       </div>
       <nav
-        class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90 shadow-sm backdrop-blur-sm md:px-[40px]"
+        class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 dark:text-white bg-opacity-90 shadow-sm backdrop-blur-sm md:px-[40px]"
       >
         <div
           class="container mx-auto px-6 py-4 flex items-center justify-between"
         >
           <a href="#home" class="text-xl font-semibold text-primary"
-            >Ashu<span class="text-gray-800"> Saini</span></a
+            >Ashu<span class="text-gray-800 dark:text-white"> Saini</span></a
           >
           <div class="hidden md:flex items-center space-x-8">
             <a
+              href="#home"
+              data-readdy="true"
+              class="text-gray-600 dark:text-white hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
               href="#about"
               data-readdy="true"
-              class="text-gray-600 hover:text-primary transition-colors"
+              class="text-gray-600 dark:text-white hover:text-primary transition-colors"
               >About</a
             >
             <a
               href="#skills"
               data-readdy="true"
-              class="text-gray-600 hover:text-primary transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white transition-colors"
               >Skills</a
             >
             <!-- <a
@@ -133,12 +139,12 @@
             > -->
             <a
               href="#experience"
-              class="text-gray-600 hover:text-primary transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white transition-colors"
               >Experience</a
             >
             <a
               href="#contact"
-              class="text-gray-600 hover:text-primary transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white transition-colors"
               >Contact</a
             >
           </div>
@@ -153,15 +159,22 @@
           id="mobile-menu"
           class="hidden md:hidden bg-white shadow-lg absolute w-full"
         >
-          <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+          <div
+            class="container mx-auto px-6 py-3 flex flex-col space-y-4 dark:bg-gray-800 dark:text-white"
+          >
+            <a
+              href="#home"
+              class="text-gray-600 hover:text-primary dark:text-white py-2 transition-colors"
+              >Home</a
+            >
             <a
               href="#about"
-              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white py-2 transition-colors"
               >About</a
             >
             <a
               href="#skills"
-              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white py-2 transition-colors"
               >Skills</a
             >
             <!-- <a
@@ -171,12 +184,12 @@
             > -->
             <a
               href="#experience"
-              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-white"
               >Experience</a
             >
             <a
               href="#contact"
-              class="text-gray-600 hover:text-primary py-2 transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white py-2 transition-colors"
               >Contact</a
             >
           </div>
@@ -245,8 +258,11 @@
       </div>
     </header>
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white md:px-[40px]">
-      <div class="container mx-auto px-6">
+    <section
+      id="about"
+      class="py-20 bg-white md:px-[40px] dark:bg-gray-900 dark:text-white"
+    >
+      <div class="container mx-auto px-6 dark:bg-gray-900 dark:text-white">
         <div class="text-center mb-16">
           <a href="https://#about" data-readdy="true">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
@@ -266,9 +282,11 @@
               />
             </div>
           </div>
-          <div class="md:w-3/5 md:pl-16">
-            <h3 class="text-2xl font-bold mb-6">Who I Am</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed pl-[5px]">
+          <div class="md:w-3/5 md:pl-16 dark:text-white">
+            <h3 class="text-2xl font-bold mb-6 dark:text-white">Who I Am</h3>
+            <p
+              class="text-gray-600 mb-6 leading-relaxed pl-[5px] dark:text-white"
+            >
               I'm a results-driven Reporting Analyst and Automation Specialist
               with over 3 years of experience in the healthcare RCM domain. I
               focus on optimizing reporting workflows and automating repetitive
@@ -279,24 +297,28 @@
               dashboards. My work empowers stakeholders to make faster,
               data-informed decisions.
             </p>
-            <p class="text-gray-600 mb-8 leading-relaxed pl-[5px]">
+            <p
+              class="text-gray-600 mb-8 leading-relaxed pl-[5px] dark:text-white"
+            >
               My approach combines clean, maintainable code with user-centric
               report design and scalable automation architecture. I'm deeply
               committed to continuous learning and staying ahead in the
               fast-evolving world of healthcare tech and data automation, always
               aiming to deliver innovative, high-impact solutions.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 dark:text-white"
+            >
               <div>
                 <h4 class="font-semibold mb-3 flex items-center pl-[5px]">
                   <span
-                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2 dark:text-white"
                   >
                     <i class="ri-user-line text-primary"></i>
                   </span>
                   Personal Info
                 </h4>
-                <ul class="space-y-2 text-gray-600 pl-[5px]">
+                <ul class="space-y-2 text-gray-600 pl-[5px] dark:text-white">
                   <li>
                     <span class="font-medium pl-[5px]">Name:</span> Ashu Saini
                   </li>
@@ -322,7 +344,7 @@
                   </span>
                   My Interests
                 </h4>
-                <ul class="space-y-2 text-gray-600 pl-[5px]">
+                <ul class="space-y-2 text-gray-600 pl-[5px] dark:text-white">
                   <li class="pl-[5px] font-medium">Web Development</li>
                   <li class="pl-[5px] font-medium">Data analytics</li>
                   <li class="pl-[5px] font-medium">Automation</li>
@@ -353,21 +375,24 @@
       </div>
     </section>
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 md:px-[40px]">
+    <section
+      id="skills"
+      class="py-20 bg-gray-50 dark:bg-gray-800 md:px-[40px] dark:text-white"
+    >
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Skills & Expertise
           </h2>
           <div class="w-20 h-1 bg-primary mx-auto"></div>
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto dark:text-white">
             I've spent years honing my skills across various technologies and
             disciplines. Here's what I bring to the table.
           </p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -377,7 +402,7 @@
             <h3 class="text-center font-semibold">Data analytics</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -387,7 +412,7 @@
             <h3 class="text-center font-semibold">HTML5 / CSS3</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -397,7 +422,7 @@
             <h3 class="text-center font-semibold">PostgreSQL</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -407,7 +432,7 @@
             <h3 class="text-center font-semibold">Responsive Design</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -417,7 +442,7 @@
             <h3 class="text-center font-semibold">Team Leadership</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -427,7 +452,7 @@
             <h3 class="text-center font-semibold">Git / Version Control</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -437,7 +462,7 @@
             <h3 class="text-center font-semibold">Advance Excel</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -447,7 +472,7 @@
             <h3 class="text-center font-semibold">VBA</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -457,7 +482,7 @@
             <h3 class="text-center font-semibold">Python</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -467,7 +492,7 @@
             <h3 class="text-center font-semibold">Automation</h3>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow dark:bg-gray-900 dark:text-white"
           >
             <div
               class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -781,12 +806,18 @@
       </div>
     </section> -->
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50 md:px-[40px]">
+    <!-- <section id="experience" class="py-20 bg-gray-50 md:px-[40px]"> -->
+    <section
+      id="experience"
+      class="py-20 bg-white dark:bg-gray-900 md:px-[40px]"
+    >
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            Work Experience
+          </h2>
           <div class="w-20 h-1 bg-primary mx-auto"></div>
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto dark:text-white">
             My professional journey has allowed me to work with amazing teams
             and on exciting projects.
           </p>
@@ -795,9 +826,11 @@
           <div class="relative space-y-12">
             <div class="timeline-item relative">
               <div
-                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-gray-700"
               ></div>
-              <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 dark:text-white"
+              >
                 <div
                   class="flex flex-col md:flex-row md:items-center justify-between mb-4"
                 >
@@ -811,10 +844,14 @@
                 </div>
                 <h4 class="text-primary font-medium mb-4">SGH Management</h4>
                 <!-- Automation of Manual Tasks -->
-                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                <h2
+                  class="text-xl font-semibold text-gray-800 mt-6 mb-2 dark:text-white"
+                >
                   Automation of Manual Tasks
                 </h2>
-                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <ul
+                  class="list-disc pl-5 text-gray-700 space-y-2 dark:text-white"
+                >
                   <li>
                     Developed Excel macros and scripts to streamline repetitive
                     tasks, significantly reducing processing time.
@@ -838,10 +875,14 @@
                 </ul>
 
                 <!-- Collaboration with Development Team -->
-                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                <h2
+                  class="text-xl font-semibold text-gray-800 mt-6 mb-2 dark:text-white"
+                >
                   Collaboration with Development Team
                 </h2>
-                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <ul
+                  class="list-disc pl-5 text-gray-700 space-y-2 dark:text-white"
+                >
                   <li>
                     Worked alongside front-end developers to build and refine
                     the production tracker interface.
@@ -861,10 +902,14 @@
                 </ul>
 
                 <!-- Database Management -->
-                <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">
+                <h2
+                  class="text-xl font-semibold text-gray-800 mt-6 mb-2 dark:text-white"
+                >
                   Database Management
                 </h2>
-                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <ul
+                  class="list-disc pl-5 text-gray-700 space-y-2 dark:text-white"
+                >
                   <li>
                     Handled PostgreSQL database tasks, including uploading and
                     managing large datasets using Python.
@@ -875,7 +920,7 @@
                   </li>
                 </ul>
 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2 mt-4">
                   <span
                     class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
                     >PostgreSQL</span
@@ -905,9 +950,11 @@
             </div>
             <div class="timeline-item relative">
               <div
-                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-gray-700"
               ></div>
-              <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 dark:text-white"
+              >
                 <div
                   class="flex flex-col md:flex-row md:items-center justify-between mb-4"
                 >
@@ -921,7 +968,7 @@
                 </div>
                 <h4 class="text-primary font-medium mb-4">Coronis Ajuba</h4>
                 <ul
-                  class="text-gray-700 list-disc pl-5 space-y-2 text-base leading-relaxed"
+                  class="text-gray-700 list-disc pl-5 space-y-2 text-base leading-relaxed dark:text-white"
                 >
                   <li>
                     Managed a team of 20 users responsible for client support
@@ -997,9 +1044,11 @@
             </div>
             <div class="timeline-item relative">
               <div
-                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"
+                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-gray-700"
               ></div>
-              <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700 dark:text-white"
+              >
                 <div
                   class="flex flex-col md:flex-row md:items-center justify-between mb-4"
                 >
@@ -1012,7 +1061,7 @@
                   </div>
                 </div>
                 <h4 class="text-primary font-medium mb-4">Coronis Health</h4>
-                <ul class="text-gray-600 mb-4 list-disc pl-5">
+                <ul class="text-gray-600 mb-4 list-disc pl-5 dark:text-white">
                   <li>
                     Led the investigation and resolution of laboratory claim
                     denials, lowering the rejection rate by 25% through thorough
@@ -1070,12 +1119,15 @@
       </div>
     </section>
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white md:px-[40px]">
+    <section
+      id="contact"
+      class="py-20 bg-white md:px-[40px] dark:bg-gray-800 dark:text-white"
+    >
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div class="w-20 h-1 bg-primary mx-auto"></div>
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto dark:text-white">
             Have a project in mind or want to discuss potential opportunities?
             I'd love to hear from you!
           </p>
@@ -1094,8 +1146,10 @@
                   >Don’t fill this out if you’re human: <input name="bot-field"
                 /></label>
               </p>
-              <div>
-                <label for="name" class="block text-gray-700 font-medium mb-2"
+              <div class="mt-4">
+                <label
+                  for="name"
+                  class="block text-gray-700 font-medium mb-2 dark:text-white"
                   >Your Name</label
                 >
                 <input
@@ -1112,8 +1166,10 @@
                 ></span>
               </div>
 
-              <div>
-                <label for="email" class="block text-gray-700 font-medium mb-2"
+              <div class="mt-4">
+                <label
+                  for="email"
+                  class="block text-gray-700 font-medium mb-2 dark:text-white"
                   >Email Address</label
                 >
                 <input
@@ -1130,10 +1186,10 @@
                 ></span>
               </div>
 
-              <div>
+              <div class="mt-4">
                 <label
                   for="subject"
-                  class="block text-gray-700 font-medium mb-2"
+                  class="block text-gray-700 font-medium mb-2 dark:text-white"
                   >Subject</label
                 >
                 <input
@@ -1145,10 +1201,10 @@
                 />
               </div>
 
-              <div>
+              <div class="mt-4">
                 <label
                   for="message"
-                  class="block text-gray-700 font-medium mb-2"
+                  class="block text-gray-700 font-medium mb-2 dark:text-white"
                   >Message</label
                 >
                 <textarea
@@ -1165,12 +1221,15 @@
                 ></span>
               </div>
 
-              <div class="flex items-center mb-4">
+              <div class="flex items-center mb-4 mt-4">
                 <div
                   id="agreement-checkbox"
                   class="custom-checkbox mr-3 cursor-pointer"
                 ></div>
-                <label for="agreement" class="text-gray-600 cursor-pointer">
+                <label
+                  for="agreement"
+                  class="text-gray-600 cursor-pointer dark:text-white"
+                >
                   I agree to the privacy policy and terms of service
                 </label>
               </div>
@@ -1187,7 +1246,9 @@
             </form>
           </div>
           <div class="lg:w-1/2">
-            <div class="bg-gray-50 p-8 rounded-lg h-full">
+            <div
+              class="bg-gray-50 p-8 rounded-lg h-full dark:bg-gray-700 dark:text-white"
+            >
               <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
               <div class="space-y-6">
                 <div class="flex items-start">
@@ -1197,8 +1258,10 @@
                     <i class="ri-map-pin-line text-primary ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="font-medium text-gray-900 mb-1">Location</h4>
-                    <p class="text-gray-600">Mohali, India</p>
+                    <h4 class="font-medium text-gray-900 mb-1 dark:text-white">
+                      Location
+                    </h4>
+                    <p class="text-gray-600 dark:text-white">Mohali, India</p>
                   </div>
                 </div>
                 <div class="flex items-start">
@@ -1207,11 +1270,13 @@
                   >
                     <i class="ri-mail-line text-primary ri-lg"></i>
                   </div>
-                  <div>
-                    <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                  <div class="min-w-0">
+                    <h4 class="font-medium text-gray-900 mb-1 dark:text-white">
+                      Email
+                    </h4>
                     <a
                       href="mailto:ashusaini635@gmail.com"
-                      class="text-primary hover:underline"
+                      class="text-primary hover:underline break-words"
                       >ashusaini635@gmail.com</a
                     >
                   </div>
@@ -1223,7 +1288,9 @@
                     <i class="ri-phone-line text-primary ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+                    <h4 class="font-medium text-gray-900 mb-1 dark:text-white">
+                      Phone
+                    </h4>
                     <a
                       href="tel:+919803698470"
                       class="text-primary hover:underline"
@@ -1238,7 +1305,9 @@
                     <i class="ri-global-line text-primary ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="font-medium text-gray-900 mb-1">Website</h4>
+                    <h4 class="font-medium text-gray-900 mb-1 dark:text-white">
+                      Website
+                    </h4>
                     <a
                       href="https://ashusaini.netlify.app/"
                       class="text-primary hover:underline"
@@ -1248,7 +1317,9 @@
                 </div>
               </div>
               <div class="mt-8">
-                <h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
+                <h4 class="font-medium text-gray-900 mb-4 dark:text-white">
+                  Follow Me
+                </h4>
                 <div class="flex space-x-4">
                   <a
                     target="_blank"
@@ -1284,7 +1355,8 @@
       </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 md:px-[40px]">
+    <!-- <footer class="bg-gray-900 text-white py-12 md:px-[40px]"> -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 md:px-[40px]">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0">
@@ -1296,6 +1368,11 @@
             </p>
           </div>
           <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+            <a
+              href="#home"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Home</a
+            >
             <a
               href="#about"
               class="text-gray-400 hover:text-white transition-colors"
