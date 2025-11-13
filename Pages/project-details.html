@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details | Ashu Saini</title>
+    <meta
+      name="description"
+      content="Detailed information about Ashu Saini's projects in data analysis, automation, and healthcare RCM."
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "media",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#10b981",
+            },
+            borderRadius: {
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white scroll-smooth">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 dark:text-white bg-opacity-90 shadow-sm backdrop-blur-sm md:px-[40px]"
+    >
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../index.html" class="text-xl font-semibold text-primary"
+          >Ashu<span class="text-gray-800 dark:text-white"> Saini</span></a
+        >
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html#home" class="hover:text-primary transition-colors">Home</a>
+          <a href="../index.html#about" class="hover:text-primary transition-colors">About</a>
+          <a href="../index.html#skills" class="hover:text-primary transition-colors">Skills</a>
+          <a href="../index.html#projects" class="hover:text-primary transition-colors">Projects</a>
+          <a href="../index.html#experience" class="hover:text-primary transition-colors">Experience</a>
+          <a href="../index.html#contact" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 dark:text-white hover:text-primary transition-colors"
+          aria-label="Toggle menu"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-6 py-3 flex flex-col space-y-4 dark:bg-gray-800 dark:text-white">
+          <a href="../index.html#home" class="hover:text-primary transition-colors">Home</a>
+          <a href="../index.html#about" class="hover:text-primary transition-colors">About</a>
+          <a href="../index.html#skills" class="hover:text-primary transition-colors">Skills</a>
+          <a href="../index.html#projects" class="hover:text-primary transition-colors">Projects</a>
+          <a href="../index.html#experience" class="hover:text-primary transition-colors">Experience</a>
+          <a href="../index.html#contact" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-24 pb-8 bg-gray-50 dark:bg-gray-800 md:px-[40px]">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+          <a href="../index.html" class="hover:text-primary transition-colors">Home</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <a href="../index.html#projects" class="hover:text-primary transition-colors">Projects</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span id="project-title" class="text-primary font-semibold">Project Details</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-gray-900 md:px-[40px]">
+      <div class="container mx-auto px-6">
+        <!-- Project Header -->
+        <div class="mb-12">
+          <h1 id="project-name" class="text-4xl md:text-5xl font-bold mb-4">
+            Project Name
+          </h1>
+          <p id="project-category" class="text-primary font-semibold text-lg mb-6">
+            Category
+          </p>
+          <p id="project-description" class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl">
+            Project description goes here
+          </p>
+        </div>
+
+        <!-- Project Image -->
+        <div class="mb-12">
+          <img
+            id="project-image"
+            src=""
+            alt="Project"
+            class="w-full rounded-lg shadow-lg object-cover h-96 md:h-[500px]"
+          />
+        </div>
+
+        <!-- Project Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3 class="text-sm font-semibold text-primary uppercase mb-2">Duration</h3>
+            <p id="project-duration" class="text-xl font-semibold dark:text-white">
+              3 Months
+            </p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3 class="text-sm font-semibold text-primary uppercase mb-2">Role</h3>
+            <p id="project-role" class="text-xl font-semibold dark:text-white">
+              Full Stack Developer
+            </p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3 class="text-sm font-semibold text-primary uppercase mb-2">Status</h3>
+            <p id="project-status" class="text-xl font-semibold dark:text-white">
+              Completed
+            </p>
+          </div>
+        </div>
+
+        <!-- Project Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+          <div class="lg:col-span-2">
+            <!-- Overview -->
+            <div class="mb-12">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">Overview</h2>
+              <p id="project-overview" class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                Detailed overview of the project goes here. Include the objectives, challenges, and how you approached solving them.
+              </p>
+            </div>
+
+            <!-- Challenges & Solutions -->
+            <div class="mb-12">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">Challenges & Solutions</h2>
+              <div id="challenges-container" class="space-y-6">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                  <h4 class="font-semibold text-lg mb-2">Challenge</h4>
+                  <p class="text-gray-600 dark:text-gray-400">Solution description</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results & Impact -->
+            <div class="mb-12">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">Results & Impact</h2>
+              <div id="results-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="border-l-4 border-primary pl-4">
+                  <p class="text-3xl font-bold text-primary mb-2">95%</p>
+                  <p class="text-gray-600 dark:text-gray-400">Efficiency Increase</p>
+                </div>
+                <div class="border-l-4 border-primary pl-4">
+                  <p class="text-3xl font-bold text-primary mb-2">40hrs</p>
+                  <p class="text-gray-600 dark:text-gray-400">Time Saved Weekly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <!-- Technologies Used -->
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold mb-6">Technologies Used</h3>
+              <div id="technologies-container" class="flex flex-wrap gap-2">
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">
+                  Technology
+                </span>
+              </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-6">Key Features</h3>
+              <ul id="features-container" class="space-y-3">
+                <li class="flex items-start space-x-3">
+                  <i class="ri-check-line text-primary mt-1 flex-shrink-0"></i>
+                  <span class="text-gray-600 dark:text-gray-400">Feature item</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Project Links (dynamically inserted) -->
+            <div class="mt-8 space-y-4" id="project-links-container">
+              <!-- Links or confidentiality notice inserted by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Projects -->
+        <div class="border-t pt-12">
+          <h2 class="text-3xl font-bold mb-8">Related Projects</h2>
+          <div id="related-projects" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800 md:px-[40px]">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-between items-center">
+          <a id="prev-project" href="#" class="flex items-center space-x-2 text-primary hover:text-blue-600 transition-colors font-semibold">
+            <i class="ri-arrow-left-line"></i>
+            <span>Previous Project</span>
+          </a>
+          <a href="../index.html#projects" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-blue-600 transition-colors">All Projects</a>
+          <a id="next-project" href="#" class="flex items-center space-x-2 text-primary hover:text-blue-600 transition-colors font-semibold">
+            <span>Next Project</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 md:px-[40px]">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+          <div>
+            <p class="text-sm text-gray-400">© 2024 Ashu Saini. All rights reserved.</p>
+          </div>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ri-linkedin-box-line ri-lg"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ri-github-line ri-lg"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ri-twitter-line ri-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/project-details.js"></script>
+    <script>
+      // ensure mobile menu toggle works even if JS file loads earlier or later
+      document.getElementById('mobile-menu-button')?.addEventListener('click', function () {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

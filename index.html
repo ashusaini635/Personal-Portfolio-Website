@@ -28,7 +28,7 @@
     />
     <meta property="og:url" content="https://ashusaini.netlify.app" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./Assets/Favicon/favicon.ico" type="image/x-icon" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -84,7 +84,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
   </head>
   <body
     class="bg-white text-gray-800 h-screen no-scrollbar dark:bg-gray-900 scroll-smooth snap-y snap-mandatory"
@@ -132,11 +132,11 @@
               class="text-gray-600 hover:text-primary dark:text-white transition-colors"
               >Skills</a
             >
-            <!-- <a
+            <a
               href="#projects"
-              class="text-gray-600 hover:text-primary transition-colors"
+              class="text-gray-600 hover:text-primary dark:text-white transition-colors"
               >Projects</a
-            > -->
+            >
             <a
               href="#experience"
               class="text-gray-600 hover:text-primary dark:text-white transition-colors"
@@ -177,11 +177,11 @@
               class="text-gray-600 hover:text-primary dark:text-white py-2 transition-colors"
               >Skills</a
             >
-            <!-- <a
+            <a
               href="#projects"
               class="text-gray-600 hover:text-primary py-2 transition-colors"
               >Projects</a
-            > -->
+            >
             <a
               href="#experience"
               class="text-gray-600 hover:text-primary py-2 transition-colors dark:text-white"
@@ -239,7 +239,7 @@
             class="relative w-fit border-2 border-primary rounded-lg border-white shadow-xl"
           >
             <img
-              src="./Ashu.jpeg"
+              src="./Assets/Ashu.jpeg"
               alt="Ashu Saini"
               class="relative rounded-lg shadow-lg w-full"
             />
@@ -276,7 +276,7 @@
                 class="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-lg"
               ></div>
               <img
-                src="./work skills.png"
+                src="./Assets/work skills.png"
                 alt="Work skills"
                 class="relative z-10 rounded-lg shadow-lg w-full"
               />
@@ -352,12 +352,13 @@
                   <li class="pl-[5px] font-medium">VBA</li>
                   <li class="pl-[5px] font-medium">Dashboards</li>
                   <li class="pl-[5px] font-medium">Power BI</li>
+                  <li class="pl-[5px] font-medium">RCM(US Healthcare)</li>
                 </ul>
               </div>
             </div>
             <div class="flex space-x-4">
               <a
-                href="https://drive.google.com/uc?export=download&id=1JtNSHjpnKuVuCsvbYsXVccLVlYvVlKba"
+                href="https://drive.google.com/uc?export=download&id=1Tyioan7Nu6uzrH5JMu39HaFgNBzThBJc"
                 target="_blank"
                 rel="noopener"
                 class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap flex items-center"
@@ -535,12 +536,14 @@
       </div>
     </section>
     <!-- Projects Section -->
-    <!-- <section id="projects" class="py-20 bg-white">
+    <section id="projects" class="py-20 bg-gray-900">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            My Projects
+          </h2>
           <div class="w-20 h-1 bg-primary mx-auto"></div>
-          <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p class="text-gray-600 mt-6 max-w-2xl mx-auto dark:text-gray-300">
             Here are some of my recent projects. Each one presented unique
             challenges and opportunities for growth.
           </p>
@@ -562,264 +565,296 @@
             class="project-filter-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
             data-filter="mobile"
           >
-            Mobile Apps
+            Automation
           </button>
           <button
             class="project-filter-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
             data-filter="ui"
           >
-            UI/UX Design
+            Data Analysis
           </button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-            data-category="web ui"
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
+            data-category="mobile"
           >
             <div class="relative h-60 overflow-hidden">
               <img
-                src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20dashboard%20interface%20with%20analytics%20charts%20and%20product%20management%2C%20clean%20design%2C%20blue%20color%20scheme%2C%20professional%20UI%20design&width=600&height=400&seq=project1&orientation=landscape"
-                alt="E-commerce Dashboard"
+                src="./Assets/Projects/Daisy_bill.png"
+                alt="DaisyBill Automation"
                 class="w-full h-full object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="./pages/project-details.html?id=1"
                   class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
                   >View Details</a
                 >
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">E-commerce Dashboard</h3>
-              <p class="text-gray-600 mb-4">
-                A comprehensive admin dashboard for online stores with
-                analytics, inventory management, and order processing.
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                DaisyBill Automation
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Built an automation solution using Python and VBA to extract,
+                transform, and upload reports from the DaisyBill PMS. Scheduled
+                to run at fixed times, this streamlined reporting, decreased
+                errors, and significantly reduced team workload.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >React</span
+                  >Python</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Node.js</span
+                  >VBA</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >MongoDB</span
+                  >Automation</span
                 >
               </div>
             </div>
           </div>
           <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-            data-category="mobile ui"
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
+            data-category="mobile"
           >
             <div class="relative h-60 overflow-hidden">
               <img
-                src="https://readdy.ai/api/search-image?query=fitness%20mobile%20app%20interface%20on%20smartphone%2C%20workout%20tracking%20screens%2C%20clean%20modern%20UI%20with%20blue%20accent%20colors%2C%20activity%20charts&width=600&height=400&seq=project2&orientation=landscape"
-                alt="Fitness Tracker App"
+                src="./Assets/Projects/Data_transformation.png"
+                alt="Data Transformation"
                 class="w-full h-full object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="./pages/project-details.html?id=2"
                   class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
                   >View Details</a
                 >
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Fitness Tracker App</h3>
-              <p class="text-gray-600 mb-4">
-                A mobile application for tracking workouts, nutrition, and
-                health metrics with personalized recommendations.
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                Data Transformation
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Created Python automation scripts to handle data transformation
+                for different clients and upload datasets into a PostgreSQL
+                database. Scheduling fixed-time runs saved significant
+                processing time and reduced manual errors.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >React Native</span
-                >
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Firebase</span
-                >
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >UI/UX</span
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-            data-category="web"
-          >
-            <div class="relative h-60 overflow-hidden">
-              <img
-                src="https://readdy.ai/api/search-image?query=real%20estate%20property%20listing%20website%20interface%2C%20clean%20modern%20design%20with%20property%20cards%20and%20search%20filters%2C%20professional%20web%20design&width=600&height=400&seq=project3&orientation=landscape"
-                alt="Real Estate Platform"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
-              >
-                <a
-                  href="#"
-                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
-                  >View Details</a
-                >
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Real Estate Platform</h3>
-              <p class="text-gray-600 mb-4">
-                A web platform for property listings with advanced search,
-                virtual tours, and agent communication tools.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Vue.js</span
-                >
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Django</span
+                  >Python</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
                   >PostgreSQL</span
                 >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >ETL</span
+                >
               </div>
             </div>
           </div>
           <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
+            data-category="mobile"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="./Assets/Projects/Modmed_Automation.png"
+                alt="Modmed Automation"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="./pages/project-details.html?id=3"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                Modmed Automation
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Designed a full automation workflow using Python to extract,
+                transform, and upload reports from the Modmed PMS into
+                PostgreSQL. Scheduled runs improved accuracy and saved several
+                hours of manual processing weekly.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Automation</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
+            data-category="mobile"
+          >
+            <div class="relative h-60 overflow-hidden">
+              <img
+                src="./Assets/Projects/Niko_Automation.png"
+                alt="Niko Automation"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="./pages/project-details.html?id=4"
+                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                Niko Automation
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Developed an automation system with Python and Playwright to
+                extract, transform, and upload reports from Niko PMS. This
+                scheduled process minimized human interface, enhanced accuracy,
+                and improved operational efficiency.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Playwright</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >Automation</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
             data-category="ui"
           >
             <div class="relative h-60 overflow-hidden">
               <img
-                src="https://readdy.ai/api/search-image?query=banking%20app%20UI%20design%2C%20financial%20dashboard%20with%20transaction%20history%20and%20budget%20tracking%2C%20clean%20minimal%20interface%20with%20blue%20color%20scheme&width=600&height=400&seq=project4&orientation=landscape"
-                alt="Banking App UI Redesign"
+                src="./Assets/Projects/Power_bi_dashboard.png"
+                alt="Power BI Dashboard"
                 class="w-full h-full object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="./pages/project-details.html?id=5"
                   class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
                   >View Details</a
                 >
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Banking App UI Redesign</h3>
-              <p class="text-gray-600 mb-4">
-                A complete UI/UX overhaul for a banking application focusing on
-                simplicity, accessibility, and security.
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                Power BI Dashboard
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Created a comprehensive RCM appointments dashboard in Power BI,
+                tracking key performance indicators (KPIs) to provide actionable
+                insights and improve operational efficiency in healthcare
+                revenue cycle management.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Figma</span
+                  >Power BI</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >UI/UX</span
+                  >Data Visualization</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Prototyping</span
+                  >RCM</span
+                >
+                <span
+                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                  >KPI Dashboard</span
                 >
               </div>
             </div>
           </div>
           <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-            data-category="mobile web"
+            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 dark:bg-gray-800"
+            data-category="web"
           >
             <div class="relative h-60 overflow-hidden">
               <img
-                src="https://readdy.ai/api/search-image?query=food%20delivery%20app%20interface%20on%20smartphone%20and%20web%20browser%2C%20restaurant%20listings%20and%20order%20tracking%2C%20modern%20UI%20design%20with%20food%20photography&width=600&height=400&seq=project5&orientation=landscape"
-                alt="Food Delivery Service"
+                src="./Assets/Projects/Personal_porfolio_website.png"
+                alt="Personal Portfolio Website"
                 class="w-full h-full object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="./pages/project-details.html?id=6"
                   class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
                   >View Details</a
                 >
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Food Delivery Service</h3>
-              <p class="text-gray-600 mb-4">
-                A cross-platform solution for food ordering and delivery with
-                real-time tracking and payment processing.
+              <h3 class="text-xl font-bold mb-2 dark:text-white">
+                Personal Portfolio Website
+              </h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-400">
+                Designed and deployed a responsive personal portfolio site using
+                HTML, Tailwind CSS, and JavaScript. Deployed on Netlify, it
+                includes a contact form and serves as a professional platform to
+                showcase skills and projects.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >React</span
+                  >HTML</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >React Native</span
+                  >Tailwind CSS</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Express</span
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-            data-category="web ui"
-          >
-            <div class="relative h-60 overflow-hidden">
-              <img
-                src="https://readdy.ai/api/search-image?query=learning%20management%20system%20interface%20with%20course%20listings%20and%20student%20dashboard%2C%20educational%20platform%20UI%20design%2C%20clean%20modern%20interface&width=600&height=400&seq=project6&orientation=landscape"
-                alt="Learning Management System"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
-              >
-                <a
-                  href="#"
-                  class="bg-white text-primary px-4 py-2 !rounded-button font-medium hover:bg-blue-50 transition-colors whitespace-nowrap"
-                  >View Details</a
-                >
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Learning Management System</h3>
-              <p class="text-gray-600 mb-4">
-                An educational platform for course creation, student management,
-                and interactive learning experiences.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >TypeScript</span
+                  >JavaScript</span
                 >
                 <span
                   class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >Next.js</span
-                >
-                <span
-                  class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
-                  >GraphQL</span
+                  >Netlify</span
                 >
               </div>
             </div>
@@ -834,7 +869,7 @@
           </a>
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- Experience Section -->
     <!-- <section id="experience" class="py-20 bg-gray-50 md:px-[40px]"> -->
     <section
@@ -1413,11 +1448,11 @@
               class="text-gray-400 hover:text-white transition-colors"
               >Skills</a
             >
-            <!-- <a
+            <a
               href="#projects"
               class="text-gray-400 hover:text-white transition-colors"
               >Projects</a
-            > -->
+            >
             <a
               href="#experience"
               class="text-gray-400 hover:text-white transition-colors"
@@ -1487,6 +1522,6 @@
         </a>
       </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
